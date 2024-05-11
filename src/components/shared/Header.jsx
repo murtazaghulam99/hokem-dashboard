@@ -25,7 +25,7 @@ const Header = () => {
         </div>
         <div className="flex md:flex-row flex-col pb-4 space-x-2 xl:space-x-6 items-center">
           <Search data-aos="fade-left" />
-          <div className="flex flex-row md:mt-0 mt-5 md:space-x-0 space-x-3">
+          <div className="flex flex-row md:mt-0 mt-5 space-x-3">
             <Calender data-aos="fade-left" />
             <Notifications data-aos="fade-left" />
             <Messages data-aos="fade-left" />
