@@ -1,20 +1,63 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { graph } from "../../assets";
+import Chart from "chart.js/auto";
 import { statCards } from "../../constants";
 
 const Stats = () => {
+  const chartRefs = useRef([]);
+
   useEffect(() => {
     AOS.init({
       duration: 1000,
       easing: "ease-in-out",
     });
+
+    // Initialize charts
+    statCards.forEach((card, index) => {
+      const ctx = chartRefs.current[index].getContext("2d");
+      destroyChart(ctx); // Destroy existing chart if it exists
+      createChart(ctx, card.title); // Create new chart
+    });
   }, []);
+
+  // Function to destroy existing chart
+  const destroyChart = (ctx) => {
+    const chart = Chart.getChart(ctx);
+    if (chart) {
+      chart.destroy();
+    }
+  };
+
+  // Function to create new chart
+  const createChart = (ctx, title) => {
+    new Chart(ctx, {
+      type: "bar",
+      data: {
+        labels: ["January", "February", "March", "April", "May", "June"],
+        datasets: [
+          {
+            label: title,
+            data: [65, 59, 80, 81, 56, 55],
+            backgroundColor: "rgba(0, 102, 208, 0.2)",
+            borderColor: "rgba(0, 102, 208, 1)",
+            borderWidth: 1,
+          },
+        ],
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true,
+          },
+        },
+      },
+    });
+  };
 
   return (
     <section className="py-10" data-aos="fade-up">
-      <div className="grid grid-cols-1 sm:grid-cols-2 :grid-cols-3 xl:grid-cols-4 gap-6 place-items-center">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 place-items-center">
         {statCards.map((card, index) => (
           <div
             key={index}
@@ -33,7 +76,11 @@ const Stats = () => {
               </div>
             </div>
             <h2 className="text-white font-semibold text-[36px]">$56,674</h2>
-            <img src={graph} className="w-[166px] h-[42px]" alt="" />
+            <canvas
+              ref={(ref) => (chartRefs.current[index] = ref)}
+              width="300" // Set canvas width
+              height="200" // Set canvas height
+            />
           </div>
         ))}
       </div>

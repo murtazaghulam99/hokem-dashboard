@@ -14,7 +14,6 @@ const CashFlow = () => {
   useEffect(() => {
     AOS.init({
       duration: 1000,
-      easing: "ease-in-out",
     });
   }, []);
 
@@ -86,7 +85,6 @@ const CashFlow = () => {
           <div
             key={index}
             className="border lg:mb-0 mb-4 flex flex-col text-white space-y-2 items-center justify-center text-center border-[#ffff]/20 rounded-2xl p-5 bg-[#ffff]/5 backdrop-blur-md h-[172px]"
-            data-aos="fade-up"
           >
             <img src={arrow} className={`w-3 h-3 ${item.imageClass}`} alt="" />
             <p className="text-md">{item.label}</p>
