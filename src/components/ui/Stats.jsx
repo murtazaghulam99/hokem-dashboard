@@ -1,14 +1,43 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { graph } from "../../assets";
+import Chart from "chart.js/auto"; // Import Chart.js
 import { statCards } from "../../constants";
 
 const Stats = () => {
+  const chartRefs = useRef([]);
+
   useEffect(() => {
     AOS.init({
       duration: 1000,
       easing: "ease-in-out",
+    });
+
+    // Initialize charts
+    statCards.forEach((card, index) => {
+      const ctx = chartRefs.current[index].getContext("2d");
+      new Chart(ctx, {
+        type: "bar",
+        data: {
+          labels: ["January", "February", "March", "April", "May", "June"],
+          datasets: [
+            {
+              label: card.title,
+              data: [65, 59, 80, 81, 56, 55],
+              backgroundColor: "rgba(255, 99, 132, 0.2)",
+              borderColor: "rgba(255, 99, 132, 1)",
+              borderWidth: 1,
+            },
+          ],
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+        },
+      });
     });
   }, []);
 
@@ -33,7 +62,7 @@ const Stats = () => {
               </div>
             </div>
             <h2 className="text-white font-semibold text-[36px]">$56,674</h2>
-            <img src={graph} className="w-[166px] h-[42px]" alt="" />
+            <canvas ref={(ref) => (chartRefs.current[index] = ref)} />
           </div>
         ))}
       </div>

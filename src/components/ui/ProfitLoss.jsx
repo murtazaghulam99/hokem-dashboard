@@ -84,19 +84,19 @@ const ProfitLoss = () => {
               <h1 className="font-bold text-[26px] text-white pt-1">$1,806</h1>
             </div>
           </div>
-          <div class="w-full md:mb-0 mb-2 md:mt-0 mt-6">
-            <div class="relative right-0">
+          <div className="w-full md:mb-0 mb-2 md:mt-0 mt-6">
+            <div className="relative right-0">
               <ul
-                class="relative flex flex-wrap items-center p-1 list-none space-x-1"
+                className="relative flex flex-wrap items-center p-1 list-none space-x-1"
                 data-tabs="tabs"
                 role="list"
               >
                 {["Nov 20", "Dec 20", "Jan 20", "Feb 20", "March 20"].map(
                   (tab, index) => (
-                    <li key={index} class="z-30 flex-auto text-center">
+                    <li key={index} className="z-30 flex-auto text-center">
                       <a
                         onClick={() => handleTabClick(tab)}
-                        class={`z-30 flex items-center ${
+                        className={`z-30 flex items-center ${
                           tab === activeTab
                             ? "bg-[#0066D0]"
                             : "hover:bg-[#0066D0]"
@@ -106,7 +106,7 @@ const ProfitLoss = () => {
                         role="tab"
                         aria-selected={tab === activeTab ? "true" : "false"}
                       >
-                        <span class="ml-1 text-[11px]">{tab}</span>
+                        <span className="ml-1 text-[11px]">{tab}</span>
                       </a>
                     </li>
                   )
