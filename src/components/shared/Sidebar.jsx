@@ -11,7 +11,6 @@ const Sidebar = () => {
   useEffect(() => {
     AOS.init({
       duration: 1000,
-      once: true,
     });
   }, []);
 
@@ -45,7 +44,6 @@ const Sidebar = () => {
                       : ""
                   }`}
                   onClick={() => handleItemClick(item.href)}
-                  data-aos="fade-up"
                 >
                   <img src={item.icon} className="w-[22px] h-[22px]" alt="" />
                   <p>{item.text}</p>
