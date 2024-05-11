@@ -23,7 +23,7 @@ function App() {
         <>
           <div className="App flex h-screen">
             <Sidebar />
-            <div className="ml-64 flex-grow">
+            <div className="ml-0 md:ml-52 xl:ml-64 flex-grow">
               <Dashboard />
             </div>
           </div>

@@ -4,7 +4,9 @@ const NetIncome = () => {
   return (
     <>
       <section className="w-full max-w-[570px]">
-        <h1 className="text-white text-[36px] font-semibold">Net Income</h1>
+        <h1 className="text-white text-[32px] md:text-[36px] font-semibold">
+          Net Income
+        </h1>
         <div>
           <div className="flex capitalize text-white pt-4 px-3 font-medium text-[18px] justify-between">
             <p>Year</p>

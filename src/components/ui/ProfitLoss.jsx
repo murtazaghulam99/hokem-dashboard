@@ -18,19 +18,15 @@ const ProfitLoss = () => {
   }, []);
 
   return (
-    <section
-      className="w-full max-w-[580px]"
-      data-aos="fade-up"
-      data-aos-duration="1000"
-    >
-      <div className="flex justify-between items-center pb-2">
-        <h1 className="text-white text-[36px] font-medium capitalize">
+    <section className="" data-aos="fade-up" data-aos-duration="1000">
+      <div className="flex justify-between md:flex-row flex-col items-center pb-2">
+        <h1 className="text-white text-[32px] md:text-[36px] md:my-0 my-4 font-medium capitalize">
           Profit & loss
         </h1>
         <form className="">
           <select
             id="report"
-            className="bg-[#0066D0] hover:bg-[#0066D0]/90 transition-colors capitalize cursor-pointer border-0 text-white text-lg rounded-2xl focus:ring-blue-500 focus:border-blue-500 block w-full mr-4 px-4 py-3 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            className="bg-[#0066D0] hover:bg-[#0066D0]/90 transition-colors capitalize cursor-pointer border-0 text-white md:text-lg rounded-2xl focus:ring-blue-500 focus:border-blue-500 block w-full mr-4 px-4 py-3 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           >
             <option selected>view report</option>
             <option className="bg-[#0066D0]/30" value="report">
@@ -45,7 +41,7 @@ const ProfitLoss = () => {
           </select>
         </form>
       </div>
-      <h5 className="capitalize text-white text-[18px] pt-3">
+      <h5 className="capitalize text-white md:text-[18px] pt-3">
         income and expenses (including unpaid bills & invoices)
       </h5>
       <div className="flex text-white space-x-7 justify-start pt-2 items-center">
@@ -58,8 +54,8 @@ const ProfitLoss = () => {
           <p>Outflow</p>
         </div>
       </div>
-      <div className="border border-[#ffff]/20 rounded-2xl p-4 space-y-6 bg-[#ffff]/5 backdrop-blur-md w-full h-[263px] mt-5">
-        <div className="flex justify-between items-end">
+      <div className="border border-[#ffff]/20 rounded-2xl p-4 space-y-6 bg-[#ffff]/5 backdrop-blur-md w-full md:h-[263px] mt-5">
+        <div className="flex justify-between md:flex-row flex-col items-end">
           <div className="flex flex-col">
             <h1 className="text-[48px] font-extrabold flex items-center text-[#0066D0]">
               192{" "}
@@ -77,7 +73,7 @@ const ProfitLoss = () => {
             alt=""
           />
         </div>
-        <div className="flex justify-between items-end space-x-5 pt-5">
+        <div className="flex justify-between md:flex-row flex-col items-center md:items-end md:space-x-5 pt-2 md:pt-5">
           <div className="flex space-x-7">
             <div className="flex flex-col">
               <img src={barcharts} className="w-[78px] h-[27px]" alt="" />
@@ -88,7 +84,7 @@ const ProfitLoss = () => {
               <h1 className="font-bold text-[26px] text-white pt-1">$1,806</h1>
             </div>
           </div>
-          <div class="w-full">
+          <div class="w-full md:mb-0 mb-2 md:mt-0 mt-6">
             <div class="relative right-0">
               <ul
                 class="relative flex flex-wrap items-center p-1 list-none space-x-1"

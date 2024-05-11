@@ -4,7 +4,7 @@ const Payables = () => {
   return (
     <>
       <section className="w-full max-w-[570px]">
-        <h1 className="text-white text-[36px] capitalize font-semibold">
+        <h1 className="text-white text-[32px] md:text-[36px] capitalize font-semibold">
           payable & owning
         </h1>
         <div>
