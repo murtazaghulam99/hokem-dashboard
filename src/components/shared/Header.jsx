@@ -9,26 +9,24 @@ import Profile from "../ui/Profile";
 
 const Header = () => {
   useEffect(() => {
-    AOS.init({
-      duration: 1000,
-    });
+    AOS.init();
   }, []);
 
   return (
-    <section data-aos="fade-down">
+    <section data-aos="fade-down" data-aos-duration="1000">
       <div className="lg:flex justify-between lg:space-x-5 xl:space-x-0 border-b-[1px] border-[#ffff]/20 items-center">
-        <div className="pb-4" data-aos="fade-right">
+        <div className="pb-4">
           <h1 className="capitalize text-white font-semibold text-[30px] xl:text-[48px]">
             overview
           </h1>
         </div>
         <div className="flex md:flex-row flex-col pb-4 space-x-2 xl:space-x-6 items-center">
-          <Search  />
+          <Search />
           <div className="flex flex-row md:mt-0 mt-5 space-x-3">
             <Calender />
-            <Notifications  />
+            <Notifications />
             <Messages />
-            <Profile  />
+            <Profile />
           </div>
         </div>
       </div>

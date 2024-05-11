@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { arrow, ellipseblue, ellipseyellow } from "../../assets";
 import { gridData, tabs } from "../../constants";
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 const CashFlow = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -11,14 +9,8 @@ const CashFlow = () => {
     setActiveTab(index);
   };
 
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-    });
-  }, []);
-
   return (
-    <section className="" data-aos="fade-up">
+    <section>
       <div className="flex justify-between md:flex-row flex-col items-center pb-2">
         <h1 className="text-white text-[32px] xl:text-[36px] md:mb-0 mb-3 font-medium capitalize">
           cash flow

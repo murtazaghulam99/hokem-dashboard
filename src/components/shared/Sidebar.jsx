@@ -24,15 +24,10 @@ const Sidebar = () => {
 
   return (
     <>
-      <div className="hidden md:block">
+      <div className="hidden md:block" data-aos="fade-left">
         <aside className="fixed h-screen text-white w-42 xl:w-64 flex flex-col justify-between p-7">
           <div className="flex flex-col items-center justify-center pt-8">
-            <img
-              src={logo}
-              className="w-full max-w-[140px]"
-              alt=""
-              data-aos="fade-down"
-            />
+            <img src={logo} className="w-full max-w-[140px]" alt="" />
             <div className="flex flex-col items-start text-[16px] font-semibold pt-14 space-y-4">
               {navItems.map((item, index) => (
                 <a
@@ -99,14 +94,12 @@ const Sidebar = () => {
         </button>
 
         {isSidebarOpen && (
-          <aside className="fixed bg-[#00051b] h-screen text-white w-42 xl:w-64 flex z-[50] flex-col justify-between p-7">
+          <aside
+            className="fixed bg-[#00051b] h-screen text-white w-64 flex z-[50] flex-col justify-between p-7"
+            data-aos="fade-right"
+          >
             <div className="flex flex-col items-center justify-center pt-8">
-              <img
-                src={logo}
-                className="w-full max-w-[140px]"
-                alt=""
-                data-aos="fade-down"
-              />
+              <img src={logo} className="w-full max-w-[140px]" alt="" />
               <div className="flex flex-col items-start text-[16px] font-semibold pt-14 space-y-4">
                 {navItems.map((item, index) => (
                   <a
@@ -118,7 +111,6 @@ const Sidebar = () => {
                         : ""
                     }`}
                     onClick={() => handleItemClick(item.href)}
-                    data-aos="fade-up"
                   >
                     <img src={item.icon} className="w-[22px] h-[22px]" alt="" />
                     <p>{item.text}</p>

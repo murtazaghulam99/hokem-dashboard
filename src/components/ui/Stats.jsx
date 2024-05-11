@@ -8,9 +8,7 @@ const Stats = () => {
   const chartRefs = useRef([]);
 
   useEffect(() => {
-    AOS.init({
-      duration: 1000,
-    });
+    AOS.init();
 
     statCards.forEach((card, index) => {
       const ctx = chartRefs.current[index].getContext("2d");
@@ -52,7 +50,7 @@ const Stats = () => {
   };
 
   return (
-    <section className="py-10" data-aos="fade-up">
+    <section className="py-10" data-aos="fade-up" data-aos-duration="1000">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 place-items-center">
         {statCards.map((card, index) => (
           <div

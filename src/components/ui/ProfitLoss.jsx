@@ -1,7 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { barcharts, comparisionlineschart, ellipseblue } from "../../assets";
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 const ProfitLoss = () => {
   const [activeTab, setActiveTab] = useState("Nov 20");
@@ -9,15 +7,8 @@ const ProfitLoss = () => {
   const handleTabClick = (tab) => {
     setActiveTab(tab);
   };
-
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-    });
-  }, []);
-
   return (
-    <section className="" data-aos="fade-up" data-aos-duration="1000">
+    <section>
       <div className="flex justify-between md:flex-row flex-col items-center pb-2">
         <h1 className="text-white text-[32px] md:text-[36px] md:my-0 my-4 font-medium capitalize">
           Profit & loss
