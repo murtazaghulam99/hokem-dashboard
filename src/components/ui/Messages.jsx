@@ -32,7 +32,7 @@ const Messages = () => {
       </div>
       {isDropdownOpen && (
         <div
-          className="absolute top-full right-0 mt-1 w-72 bg-white border border-gray-200 shadow-lg rounded-lg z-10"
+          className="absolute top-full right-[-1rem] md:right-0 mt-1 w-52 md:w-72 bg-white border border-gray-200 shadow-lg rounded-lg z-10"
           ref={dropdownRef}
         >
           <div className="py-2 px-3 border-b border-gray-200">

@@ -38,7 +38,7 @@ const Calender = () => {
           <img src={calender} className="w-[19.5px] h-[21.5px]" alt="" />
         </div>
         {isCalendarVisible && (
-          <div className="absolute top-full left-0 mt-1 w-[200px]">
+          <div className="absolute top-full left-1 mt-1 w-[200px]">
             <DatePicker
               selected={selectedDate}
               onChange={handleDateChange}
