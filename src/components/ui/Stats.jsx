@@ -10,18 +10,15 @@ const Stats = () => {
   useEffect(() => {
     AOS.init({
       duration: 1000,
-      easing: "ease-in-out",
     });
 
-    // Initialize charts
     statCards.forEach((card, index) => {
       const ctx = chartRefs.current[index].getContext("2d");
-      destroyChart(ctx); // Destroy existing chart if it exists
-      createChart(ctx, card.title); // Create new chart
+      destroyChart(ctx);
+      createChart(ctx, card.title);
     });
   }, []);
 
-  // Function to destroy existing chart
   const destroyChart = (ctx) => {
     const chart = Chart.getChart(ctx);
     if (chart) {
@@ -29,7 +26,6 @@ const Stats = () => {
     }
   };
 
-  // Function to create new chart
   const createChart = (ctx, title) => {
     new Chart(ctx, {
       type: "bar",
@@ -62,7 +58,6 @@ const Stats = () => {
           <div
             key={index}
             className="border border-[#ffff]/20 rounded-2xl p-5 space-y-6 bg-[#ffff]/5 backdrop-blur-md w-full max-w-[300px]"
-            data-aos="fade-up"
           >
             <div className="flex items-center justify-between">
               <div className="flex space-x-2 items-center">
@@ -78,8 +73,8 @@ const Stats = () => {
             <h2 className="text-white font-semibold text-[36px]">$56,674</h2>
             <canvas
               ref={(ref) => (chartRefs.current[index] = ref)}
-              width="300" // Set canvas width
-              height="200" // Set canvas height
+              width="70"
+              height="50"
             />
           </div>
         ))}

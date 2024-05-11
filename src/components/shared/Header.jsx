@@ -11,7 +11,6 @@ const Header = () => {
   useEffect(() => {
     AOS.init({
       duration: 1000,
-      easing: "ease-in-out",
     });
   }, []);
 
@@ -24,12 +23,12 @@ const Header = () => {
           </h1>
         </div>
         <div className="flex md:flex-row flex-col pb-4 space-x-2 xl:space-x-6 items-center">
-          <Search data-aos="fade-left" />
+          <Search  />
           <div className="flex flex-row md:mt-0 mt-5 space-x-3">
-            <Calender data-aos="fade-left" />
-            <Notifications data-aos="fade-left" />
-            <Messages data-aos="fade-left" />
-            <Profile data-aos="fade-left" />
+            <Calender />
+            <Notifications  />
+            <Messages />
+            <Profile  />
           </div>
         </div>
       </div>
