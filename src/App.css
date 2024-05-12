@@ -9,12 +9,12 @@
 body {
   background: #00051bff;
   overflow: hidden;
-  scroll-behavior: smooth;
+  /* scroll-behavior: smooth; */
 }
 
 *::-webkit-scrollbar {
   display: none;
-  scroll-behavior: smooth;
+  /* scroll-behavior: smooth; */
 }
 
 .c-01,

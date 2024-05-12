@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { arrow, ellipseblue, ellipseyellow } from "../../assets";
 import { gridData, tabs } from "../../constants";
 
@@ -18,10 +18,11 @@ const CashFlow = () => {
         <div className="flex items-center gap-x-3">
           <form className="">
             <select
+              defaultValue="months"
               id="months"
               className="bg-[#0066D0] hover:bg-[#0066D0]/90 transition-colors cursor-pointer border-0 text-white md:text-lg rounded-2xl focus:ring-blue-500 focus:border-blue-500 block w-full mr-4 px-4 py-3 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             >
-              <option selected>1-6 months</option>
+              <option>1-6 months</option>
               <option className="bg-[#0066D0]/30" value="1-6 months">
                 1-6 months
               </option>
@@ -38,10 +39,11 @@ const CashFlow = () => {
           </form>
           <form className="">
             <select
+              defaultValue="report"
               id="report"
               className="bg-[#0066D0] hover:bg-[#0066D0]/90 transition-colors cursor-pointer border-0 text-white md:text-lg rounded-2xl focus:ring-blue-500 focus:border-blue-500 block w-full mr-4 px-4 py-3 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             >
-              <option selected>View Report</option>
+              <option>View Report</option>
               <option className="bg-[#0066D0]/30" value="View Reports">
                 View Report
               </option>

@@ -1,5 +1,15 @@
 import React, { useState } from "react";
-import { barcharts, comparisionlineschart, ellipseblue } from "../../assets";
+import {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+} from "recharts";
+import { barcharts, ellipseblue } from "../../assets";
+import { linechartData } from "../../constants";
 
 const ProfitLoss = () => {
   const [activeTab, setActiveTab] = useState("Nov 20");
@@ -7,6 +17,7 @@ const ProfitLoss = () => {
   const handleTabClick = (tab) => {
     setActiveTab(tab);
   };
+
   return (
     <section>
       <div className="flex justify-between md:flex-row flex-col items-center pb-2">
@@ -16,9 +27,10 @@ const ProfitLoss = () => {
         <form className="">
           <select
             id="report"
+            defaultValue="report"
             className="bg-[#0066D0] hover:bg-[#0066D0]/90 transition-colors capitalize cursor-pointer border-0 text-white md:text-lg rounded-2xl focus:ring-blue-500 focus:border-blue-500 block w-full mr-4 px-4 py-3 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           >
-            <option selected>view report</option>
+            <option>view report</option>
             <option className="bg-[#0066D0]/30" value="report">
               view report
             </option>
@@ -57,11 +69,20 @@ const ProfitLoss = () => {
               Inflow Today
             </p>
           </div>
-          <img
-            src={comparisionlineschart}
-            className="w-full max-w-[320px] h-[100px]"
-            alt=""
-          />
+          <LineChart
+            width={300}
+            height={100}
+            data={linechartData}
+            margin={{ top: 5, right: 5, left: 4, bottom: 0 }}
+          >
+            {/* <CartesianGrid strokeDasharray="3 3" /> */}
+            {/* <XAxis dataKey="name" /> */}
+            {/* <YAxis /> */}
+            <Tooltip />
+            {/* <Legend /> */}
+            <Line type="monotone" dataKey="pv" stroke="#0066D0" />
+            <Line type="monotone" dataKey="uv" stroke="#4060A9" />
+          </LineChart>
         </div>
         <div className="flex justify-between md:flex-row flex-col items-center md:items-end md:space-x-5 pt-2 md:pt-5">
           <div className="flex space-x-7">
