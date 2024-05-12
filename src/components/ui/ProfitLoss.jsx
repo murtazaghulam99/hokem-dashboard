@@ -24,7 +24,7 @@ const ProfitLoss = () => {
         <h1 className="text-white text-[32px] md:text-[36px] md:my-0 my-4 font-medium capitalize">
           Profit & loss
         </h1>
-        <form className="">
+        <form>
           <select
             id="report"
             defaultValue="report"
@@ -70,7 +70,7 @@ const ProfitLoss = () => {
             </p>
           </div>
           <LineChart
-            width={300}
+            width={330}
             height={100}
             data={linechartData}
             margin={{ top: 5, right: 5, left: 4, bottom: 0 }}
@@ -84,7 +84,7 @@ const ProfitLoss = () => {
             <Line type="monotone" dataKey="uv" stroke="#4060A9" />
           </LineChart>
         </div>
-        <div className="flex justify-between md:flex-row flex-col items-center md:items-end md:space-x-5 pt-2 md:pt-5">
+        <div className="flex justify-between md:flex-row flex-col items-center md:items-end md:space-x-5 pt-2 md:pt-6">
           <div className="flex space-x-7">
             <div className="flex flex-col">
               <img src={barcharts} className="w-[78px] h-[27px]" alt="" />
@@ -111,13 +111,13 @@ const ProfitLoss = () => {
                           tab === activeTab
                             ? "bg-[#0066D0]"
                             : "hover:bg-[#0066D0]"
-                        } justify-center w-full mb-0 transition-all ease-in-out border-0 rounded-3xl cursor-pointer text-white py-1.5`}
+                        } justify-center w-full mb-0 transition-all ease-in-out border-0 rounded-3xl cursor-pointer text-white py-1`}
                         data-tab-target=""
                         active
                         role="tab"
                         aria-selected={tab === activeTab ? "true" : "false"}
                       >
-                        <span className="ml-1 text-[11px]">{tab}</span>
+                        <span className="ml-0 text-[11px]">{tab}</span>
                       </a>
                     </li>
                   )
