@@ -10,7 +10,7 @@ const CashFlow = () => {
   };
 
   return (
-    <section className="xl:max-w-[650px] w-full">
+    <section className="xl:max-w-[740px] w-full">
       <div className="flex justify-between md:flex-row flex-col items-center pb-2">
         <h1 className="text-white text-[32px] xl:text-[36px] md:mb-0 mb-3 font-medium capitalize">
           cash flow

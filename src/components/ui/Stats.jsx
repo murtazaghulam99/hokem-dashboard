@@ -70,7 +70,7 @@ const Stats = () => {
         {statCards.map((card, index) => (
           <div
             key={index}
-            className="border border-[#ffff]/20 rounded-2xl p-4 space-y-2 bg-[#ffff]/5 backdrop-blur-md w-full max-w-[320px]"
+            className="border border-[#ffff]/20 rounded-2xl p-4 space-y-2 bg-[#ffff]/5 backdrop-blur-md w-full max-w-[370px]"
           >
             <div className="flex items-center justify-between">
               <div className="flex space-x-2 items-center">
