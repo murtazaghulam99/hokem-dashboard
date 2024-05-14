@@ -20,7 +20,7 @@ const Header = () => {
             overview
           </h1>
         </div>
-        <div className="flex md:flex-row flex-col space-x-2 xl:space-x-6 items-center">
+        <div className="flex md:flex-row flex-col space-x-2 xl:space-x-6 items-center lg:pt-0 pt-5">
           <Search />
           <div className="flex flex-row md:mt-0 mt-5 space-x-3">
             <Calender />

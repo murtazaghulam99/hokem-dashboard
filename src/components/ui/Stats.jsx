@@ -66,11 +66,11 @@ const Stats = () => {
 
   return (
     <section className="py-10" data-aos="fade-up" data-aos-duration="1000">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:gap-y-0 gap-y-2 gap-x-2 xl:grid-cols-4 place-items-center">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:gap-y-0 gap-y-3 gap-x-2 xl:grid-cols-4 place-items-center">
         {statCards.map((card, index) => (
           <div
             key={index}
-            className="border border-[#ffff]/20 rounded-2xl p-4 space-y-2 bg-[#ffff]/5 backdrop-blur-md w-full max-w-[370px]"
+            className="border border-[#ffff]/20 rounded-2xl p-4 space-y-2 bg-[#ffff]/5 backdrop-blur-md w-full md:max-w-[370px] max-w-[300px]"
           >
             <div className="flex items-center justify-between">
               <div className="flex space-x-2 items-center">
