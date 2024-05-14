@@ -14,13 +14,13 @@ const Header = () => {
 
   return (
     <section data-aos="fade-down" data-aos-duration="1000">
-      <div className="lg:flex justify-between lg:space-x-5 xl:space-x-0 border-b-[1px] border-[#ffff]/20 items-center">
-        <div className="pb-4">
+      <div className="lg:flex justify-between lg:space-x-5 xl:space-x-0 items-center">
+        <div className="">
           <h1 className="capitalize text-white font-semibold text-[30px] xl:text-[48px]">
             overview
           </h1>
         </div>
-        <div className="flex md:flex-row flex-col pb-4 space-x-2 xl:space-x-6 items-center">
+        <div className="flex md:flex-row flex-col space-x-2 xl:space-x-6 items-center">
           <Search />
           <div className="flex flex-row md:mt-0 mt-5 space-x-3">
             <Calender />
@@ -30,6 +30,7 @@ const Header = () => {
           </div>
         </div>
       </div>
+      <div className="mt-7 border-b-[1px] border-[#ffff]/15"></div>
     </section>
   );
 };

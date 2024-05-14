@@ -19,7 +19,7 @@ const ProfitLoss = () => {
   };
 
   return (
-    <section>
+    <section className="xl:max-w-[650px] w-full">
       <div className="flex justify-between md:flex-row flex-col items-center pb-2">
         <h1 className="text-white text-[32px] md:text-[36px] md:my-0 my-4 font-medium capitalize">
           Profit & loss
@@ -59,7 +59,7 @@ const ProfitLoss = () => {
       <div className="border border-[#ffff]/20 rounded-2xl p-4 space-y-6 bg-[#ffff]/5 backdrop-blur-md w-full md:h-[263px] mt-5">
         <div className="flex justify-between md:flex-row flex-col items-end">
           <div className="flex flex-col">
-            <h1 className="text-[48px] font-extrabold flex items-center text-[#0066D0]">
+            <h1 className="text-[50px] font-extrabold flex items-center text-[#0066D0]">
               192{" "}
               <span className="text-[16px] pl-2 text-white font-normal">
                 +12%

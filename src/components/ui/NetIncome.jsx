@@ -3,7 +3,7 @@ import React from "react";
 const NetIncome = () => {
   return (
     <>
-      <section className="w-full max-w-[570px]">
+      <section className="w-full">
         <h1 className="text-white text-[32px] md:text-[36px] font-semibold">
           Net Income
         </h1>

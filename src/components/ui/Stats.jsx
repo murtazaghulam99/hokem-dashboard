@@ -26,7 +26,7 @@ const Stats = () => {
 
   const createChart = (ctx, title) => {
     new Chart(ctx, {
-      type: "bar",
+      type: "line",
       data: {
         labels: ["January", "February", "March", "April", "May", "June"],
         datasets: [
@@ -43,6 +43,21 @@ const Stats = () => {
         scales: {
           y: {
             beginAtZero: true,
+            ticks: {
+              color: "white",
+            },
+          },
+          x: {
+            ticks: {
+              color: "white",
+            },
+          },
+        },
+        plugins: {
+          legend: {
+            labels: {
+              color: "white",
+            },
           },
         },
       },
@@ -51,11 +66,11 @@ const Stats = () => {
 
   return (
     <section className="py-10" data-aos="fade-up" data-aos-duration="1000">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 place-items-center">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:gap-y-0 gap-y-2 gap-x-2 xl:grid-cols-4 place-items-center">
         {statCards.map((card, index) => (
           <div
             key={index}
-            className="border border-[#ffff]/20 rounded-2xl p-5 space-y-6 bg-[#ffff]/5 backdrop-blur-md w-full max-w-[300px]"
+            className="border border-[#ffff]/20 rounded-2xl p-4 space-y-2 bg-[#ffff]/5 backdrop-blur-md w-full max-w-[320px]"
           >
             <div className="flex items-center justify-between">
               <div className="flex space-x-2 items-center">
@@ -68,11 +83,12 @@ const Stats = () => {
                 <p className="font-normal text-white text-[17px]">+17%</p>
               </div>
             </div>
-            <h2 className="text-white font-semibold text-[36px]">$56,674</h2>
+            <h2 className="text-white font-semibold text-[32px]">$56,674</h2>
             <canvas
               ref={(ref) => (chartRefs.current[index] = ref)}
-              width="70"
-              height="50"
+              // width="32"
+              // height="20"
+              className="w-full max-w-[240px]"
             />
           </div>
         ))}
