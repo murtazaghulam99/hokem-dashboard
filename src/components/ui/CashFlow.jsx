@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import { arrow, ellipseblue, ellipseyellow } from "../../assets";
 import { gridData, tabs } from "../../constants";
 
@@ -10,8 +11,18 @@ const CashFlow = () => {
   };
 
   return (
-    <section className="xl:max-w-[740px] w-full">
-      <div className="flex justify-between md:flex-row flex-col items-center pb-2">
+    <motion.section
+      className="xl:max-w-[740px] w-full"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
+      <motion.div
+        className="flex justify-between md:flex-row flex-col items-center pb-2"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+      >
         <h1 className="text-white text-[32px] xl:text-[36px] md:mb-0 mb-3 font-medium capitalize">
           cash flow
         </h1>
@@ -56,11 +67,21 @@ const CashFlow = () => {
             </select>
           </form>
         </div>
-      </div>
-      <h5 className="capitalize text-white md:text-[18px] pt-3">
+      </motion.div>
+      <motion.h5
+        className="capitalize text-white md:text-[18px] pt-3"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.4 }}
+      >
         cash coming in and out of your business
-      </h5>
-      <div className="flex text-white space-x-2 md:space-x-7 justify-start pt-2 items-center">
+      </motion.h5>
+      <motion.div
+        className="flex text-white space-x-2 md:space-x-7 justify-start pt-2 items-center"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.6 }}
+      >
         <div className="flex space-x-1 md:space-x-3 items-center">
           <img src={ellipseblue} className="w-[15px] h-[15px]" alt="" />
           <p>Inflow</p>
@@ -73,21 +94,34 @@ const CashFlow = () => {
           <img src={ellipseyellow} className="w-[15px] h-[15px]" alt="" />
           <p>Net Changes</p>
         </div>
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 place-items-center py-5 md:gap-x-2">
+      </motion.div>
+      <motion.div
+        className="grid grid-cols-1 md:grid-cols-3 place-items-center py-5 md:gap-x-2"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.8 }}
+      >
         {gridData.map((item, index) => (
-          <div
+          <motion.div
             key={index}
             className="border lg:mb-0 mb-4 flex flex-col text-white space-y-2 items-center justify-center text-center border-[#ffff]/20 rounded-2xl p-5 bg-[#ffff]/5 backdrop-blur-md w-full max-w-[195px] h-[172px]"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: index * 0.8 }}
           >
             <img src={arrow} className={`w-3 h-3 ${item.imageClass}`} alt="" />
             <p className="text-md">{item.label}</p>
             <p className="font-semibold text-[24px]">{item.amount}</p>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
 
-      <div className="w-full">
+      <motion.div
+        className="w-full"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 1 }}
+      >
         <div className="relative right-0">
           <ul
             className="relative flex flex-wrap p-0 md:p-1 list-none space-x-1 md:space-x-4"
@@ -95,9 +129,12 @@ const CashFlow = () => {
             role="list"
           >
             {tabs.map((tab, index) => (
-              <li
+              <motion.li
                 key={index}
                 className="z-30 flex-auto md:text-md text-sm text-center"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 + 1.2 }}
               >
                 <a
                   className={`${
@@ -109,12 +146,12 @@ const CashFlow = () => {
                 >
                   <span className="ml-1">{tab}</span>
                 </a>
-              </li>
+              </motion.li>
             ))}
           </ul>
         </div>
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   );
 };
 

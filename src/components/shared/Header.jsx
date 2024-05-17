@@ -1,6 +1,5 @@
-import React, { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import React from "react";
+import { motion } from "framer-motion";
 import Search from "../ui/Search";
 import Calender from "../ui/Calender";
 import Notifications from "../ui/Notifications";
@@ -8,19 +7,30 @@ import Messages from "../ui/Messages";
 import Profile from "../ui/Profile";
 
 const Header = () => {
-  useEffect(() => {
-    AOS.init();
-  }, []);
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
+  };
 
   return (
-    <section data-aos="fade-down" data-aos-duration="1000">
+    <section>
       <div className="lg:flex justify-between lg:space-x-5 xl:space-x-0 items-center">
         <div className="">
-          <h1 className="capitalize text-white font-semibold text-[30px] xl:text-[48px]">
+          <motion.h1
+            className="capitalize text-white font-semibold text-[30px] xl:text-[48px]"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.2 }}
+          >
             overview
-          </h1>
+          </motion.h1>
         </div>
-        <div className="flex md:flex-row flex-col space-x-2 xl:space-x-6 items-center lg:pt-0 pt-5">
+        <motion.div
+          className="flex md:flex-row flex-col space-x-2 xl:space-x-6 items-center lg:pt-0 pt-5"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
           <Search />
           <div className="flex flex-row md:mt-0 mt-5 space-x-3">
             <Calender />
@@ -28,7 +38,7 @@ const Header = () => {
             <Messages />
             <Profile />
           </div>
-        </div>
+        </motion.div>
       </div>
       <div className="mt-7 border-b-[1px] border-[#ffff]/15"></div>
     </section>

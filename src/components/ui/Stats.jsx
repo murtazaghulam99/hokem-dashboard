@@ -1,15 +1,12 @@
 import React, { useEffect, useRef } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import Chart from "chart.js/auto";
+import { motion } from "framer-motion";
 import { statCards } from "../../constants";
 
 const Stats = () => {
   const chartRefs = useRef([]);
 
   useEffect(() => {
-    AOS.init();
-
     statCards.forEach((card, index) => {
       const ctx = chartRefs.current[index].getContext("2d");
       destroyChart(ctx);
@@ -65,12 +62,20 @@ const Stats = () => {
   };
 
   return (
-    <section className="py-10" data-aos="fade-up" data-aos-duration="1000">
+    <motion.section
+      className="py-10"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:gap-y-0 gap-y-3 gap-x-2 xl:grid-cols-4 place-items-center">
         {statCards.map((card, index) => (
-          <div
+          <motion.div
             key={index}
             className="border border-[#ffff]/20 rounded-2xl p-4 space-y-2 bg-[#ffff]/5 backdrop-blur-md w-full md:max-w-[370px] max-w-[300px]"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: index * 0.5 }}
           >
             <div className="flex items-center justify-between">
               <div className="flex space-x-2 items-center">
@@ -86,14 +91,12 @@ const Stats = () => {
             <h2 className="text-white font-semibold text-[32px]">$56,674</h2>
             <canvas
               ref={(ref) => (chartRefs.current[index] = ref)}
-              // width="32"
-              // height="20"
               className="w-full max-w-[240px]"
             />
-          </div>
+          </motion.div>
         ))}
       </div>
-    </section>
+    </motion.section>
   );
 };
 

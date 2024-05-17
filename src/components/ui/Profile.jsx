@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { chevrondown, profile } from "../../assets";
 import { menuItems } from "../../constants";
+import { motion } from "framer-motion";
 
 const Profile = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -23,10 +24,19 @@ const Profile = () => {
   }, [dropdownRef]);
 
   return (
-    <div className="relative" ref={dropdownRef}>
+    <motion.div
+      className="relative"
+      ref={dropdownRef}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 2 }}
+    >
       <div
         className="flex items-center cursor-pointer pl-2 xl:pl-5 space-x-1"
         onClick={toggleDropdown}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
       >
         <img
           id="avatarButton"
@@ -37,9 +47,12 @@ const Profile = () => {
         <img src={chevrondown} className="w-6 h-6" alt="" />
       </div>
       {dropdownOpen && (
-        <div
+        <motion.div
           id="userDropdown"
           className="absolute right-0 mt-2 z-[500] bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
         >
           <div className="px-4 py-3 text-sm text-gray-900 dark:text-white">
             <div>Bonnie Green</div>
@@ -60,9 +73,9 @@ const Profile = () => {
               </li>
             ))}
           </ul>
-        </div>
+        </motion.div>
       )}
-    </div>
+    </motion.div>
   );
 };
 
